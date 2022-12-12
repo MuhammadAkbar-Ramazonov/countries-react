@@ -27,4 +27,8 @@
     border: none;
     background-color: transparent;
     color: var(--main-text-color);
+    background-image: url("../../assets/images/moon.svg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
 }
