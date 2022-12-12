@@ -1,0 +1,65 @@
+:root{
+    --man-inpul-color: #848484;
+    --main-text-color: #111517;
+    --main-body-color: #f2f2f2;
+    --header-bg-color: #fff;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 300;
+    src: url("./assets/fonts/nunito-sans-v12-latin-300.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url("./assets/fonts/nunito-sans-v12-latin-300.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/nunito-sans-v12-latin-regular.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url("./assets/fonts/nunito-sans-v12-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 600;
+    src: url("./assets/fonts/nunito-sans-v12-latin-600.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url("./assets/fonts/nunito-sans-v12-latin-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+    font-family: "Nunito Sans";
+    font-style: normal;
+    font-weight: 800;
+    src: url("./assets/fonts/nunito-sans-v12-latin-800.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url("./assets/fonts/nunito-sans-v12-latin-800.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+
+body{
+    font-family: "Nunito Sans", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0;
+    
+}
+
+.theme-dars{
+    --man-inpul-color: #fff;
+    --main-text-color: #fff;
+    --main-body-color: #202C36;
+    --header-bg-color: #2B3844;
+}
+
+.hero-section{
+  padding: 48px 0 45px 0;
+  background-color: var(--main-body-color);
+}

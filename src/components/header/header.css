@@ -1,0 +1,30 @@
+.site-header{
+    background-color: var(--header-bg-color);
+    box-shadow: 0px 2px 4px #0000000e;
+}
+.header-wrapper{
+    padding: 23px 0;
+}
+
+.header-link {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+    text-decoration: none;
+    color: var(--main-text-color);
+    margin: 0;
+    
+}
+.header-darkmode {
+    max-width: 120px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    padding-left: 28px;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: var(--main-text-color);
+}
