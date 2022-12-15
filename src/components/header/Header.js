@@ -1,13 +1,12 @@
 import "./header.css";
-import Moon from "../../assets/images/moon.svg"
-// const elBtn = document.querySelector('.header-darkmode');
+
+function Header () {
+//     const elBtn = document.querySelector('.header-darkmode');
 
 // elBtn.addEventListener('click', () => {
 //     document.body.classList.toggle('theme-dars')
 // })
 
-
-function Header () {
     return (
         <>
             <header className="site-header">
