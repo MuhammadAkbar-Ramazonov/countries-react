@@ -5,15 +5,21 @@ import { useEffect, useState } from "react";
 
 function App() {
 	let [country, setCountry] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [isEror, setisEror] = useState(false);
 
 	useEffect(() => {
 		fetch("https://restcountries.com/v3.1/all")
 			.then((res) => res.json())
 			.then((data) => {
 				setCountry(data);
+				setLoading(false);
+				console.log(loading);
 			})
 			.catch((err) => {
 				console.log(err);
+				setisEror(true);
+				setLoading(false);
 			});
 	}, []);
 
@@ -25,8 +31,8 @@ function App() {
 				.then((data) => {
 					setCountry(data);
 				})
-				.catch((err) => {
-					console.log(err);
+				.catch((error) => {
+					console.log(error);
 				});
 		}
 	}
@@ -80,18 +86,22 @@ function App() {
 								<option defaultValue={"Oceania"}>Oceania</option>
 							</select>
 						</form>
-						<ul className='hero-section-list row justify-content-center gx-5'>
-							{country.map((element) => (
-								<Hero
-									key={element.name.official}
-									name={element.name.common}
-									population={element.population}
-									region={element.region}
-									capital={element.capital}
-									img={element.flags.svg}
-								/>
-							))}
-						</ul>
+						{loading && <h2>Loading...</h2>}
+						{isEror && <h2>Error...</h2>}
+						{country.length !== 0 && (
+							<ul className='hero-section-list row justify-content-center gx-5'>
+								{country.map((element) => (
+									<Hero
+										key={element.name.official}
+										name={element.name.common}
+										population={element.population}
+										region={element.region}
+										capital={element.capital}
+										img={element.flags.svg}
+									/>
+								))}
+							</ul>
+						)}
 					</div>
 				</section>
 			</main>
