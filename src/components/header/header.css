@@ -1,6 +1,7 @@
+
 .site-header{
     background-color: var(--header-bg-color);
-    box-shadow: 0px 2px 4px #0000000e;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
 }
 .header-wrapper{
     padding: 23px 0;

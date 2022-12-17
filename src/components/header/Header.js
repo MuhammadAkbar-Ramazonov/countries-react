@@ -1,24 +1,30 @@
 import "./header.css";
+import { Link } from "react-router-dom";
 
-function Header () {
-//     const elBtn = document.querySelector('.header-darkmode');
+function Header() {
 
-// elBtn.addEventListener('click', () => {
-//     document.body.classList.toggle('theme-dars')
-// })
-
-    return (
-        <>
-            <header className="site-header">
-                <div className="container">
-                <div className="header-wrapper d-flex justify-content-between">
-                    <a className="header-link" href="#"> Where in the world?</a>
-                    <button className="d-flex header-darkmode" type="button" >Dark Mode</button>
-                </div>
-                </div>
-            </header>
-        </>
-    )
+	return (
+		<>
+			<header className='site-header'>
+				<div className='container'>
+					<div className='header-wrapper d-flex justify-content-between'>
+						<Link className='header-link' to="/">
+							Where in the world?
+						</Link>
+						<button
+							className='d-flex header-darkmode'
+							onClick={() => {
+								document.body.classList.toggle("theme-dars");
+							}}
+							type='button'
+						>
+							Dark Mode
+						</button>
+					</div>
+				</div>
+			</header>
+		</>
+	);
 }
 
 export default Header;
