@@ -26,7 +26,10 @@ export const Info = () => {
 				</div>
 
 				{data.map((element) => (
-					<div className='d-flex align-items-center justify-content-between'>
+					<div
+						key={element.cca2}
+						className='d-flex align-items-center justify-content-between'
+					>
 						<img
 							className='rounded me-5'
 							src={element.flags.svg}

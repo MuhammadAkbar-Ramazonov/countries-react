@@ -89,7 +89,7 @@ function Hero() {
 					{country.length !== 0 && (
 						<ul className='hero-section-list row justify-content-center gx-5'>
 							{country.map((element) => (
-								<Item
+								<Item 
 									key={element.name.official}
 									name={element.name.common}
 									population={element.population}
