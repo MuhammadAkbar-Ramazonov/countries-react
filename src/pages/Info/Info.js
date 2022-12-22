@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./info.css";
 import { Back } from "../../assets/images/icons";
+import { useTranslation } from "react-i18next";
 
 export const Info = () => {
 	const [data, setPosts] = useState([]);
 	const { name } = useParams();
 	const navigate = useNavigate();
+
+	const { t } = useTranslation();
+
 
 	useEffect(() => {
 		fetch(`https://restcountries.com/v3.1/name/${name}`)
@@ -22,7 +26,9 @@ export const Info = () => {
 					onClick={() => navigate(-1)}
 				>
 					<Back />
-					<button className='back-btn main-text-color'>Back</button>
+					<button className='back-btn main-text-color'>
+						{t("CountryCard.BackBtn")}
+					</button>
 				</div>
 
 				{data.map((element) => (
@@ -46,26 +52,30 @@ export const Info = () => {
 									<ul className='list-unstyled'>
 										<li className='about-item main-text-color'>
 											<strong className='about-item-title '>
-												Native Name:{" "}
+												{t("CountryCard.NativeName")}:
 											</strong>
 											{Object.values(element.name.nativeName)[0].common}
 										</li>
 										<li className='about-item main-text-color'>
-											<strong className='about-item-title '>
-												Population:{" "}
-											</strong>
+											<strong className='about-item-title '>Population:</strong>
 											{element.population}
 										</li>
 										<li className='about-item main-text-color'>
-											<strong className='about-item-title '>Region: </strong>
+											<strong className='about-item-title '>
+												{t("CountryCard.Region")}:
+											</strong>
 											{element.region}
 										</li>
 										<li className='about-item main-text-color'>
-											<strong className='about-item-title'>Sub Region: </strong>
+											<strong className='about-item-title'>
+												{t("CountryCard.SubRegion")}:
+											</strong>
 											{element.subregion}
 										</li>
 										<li className='about-item main-text-color'>
-											<strong className='about-item-title'>Capital: </strong>
+											<strong className='about-item-title'>
+												{t("CountryCard.Capital")}:{" "}
+											</strong>
 											{element.capital}
 										</li>
 									</ul>
@@ -73,16 +83,20 @@ export const Info = () => {
 								<ul className='list-unstyled about-list-right'>
 									<li className='about-item main-text-color'>
 										<strong className='about-item-title '>
-											Top Level Domain:{" "}
+											{t("CountryCard.TLD")}:
 										</strong>
 										{element.tld}
 									</li>
 									<li className='about-item main-text-color'>
-										<strong className='about-item-title'>Currencies: </strong>
+										<strong className='about-item-title'>
+											{t("CountryCard.Currencies")}:
+										</strong>
 										{Object.keys(element.currencies)[0]}
 									</li>
 									<li className='about-item main-text-color'>
-										<strong className='about-item-title'>Languages: </strong>
+										<strong className='about-item-title'>
+											{t("CountryCard.Languages")}:
+										</strong>
 										{Object.values(element.languages)[0]}
 										<span> </span>
 										{Object.values(element.languages)[1]}
@@ -93,7 +107,7 @@ export const Info = () => {
 							</div>
 							<div className='d-flex align-items-center '>
 								<p className='m-0 me-3 about-item-title about-item-title__active main-text-color'>
-									Border Countries:{" "}
+									{t("CountryCard.BorderCountries")}:
 								</p>
 								<div className='d-flex main-text-color'>
 									{Object.values(element.languages).length === 1 ? (
@@ -123,7 +137,9 @@ export const Info = () => {
 											</div>
 										</div>
 									) : (
-										<p className='visually-hidden'>Not any Border Countries</p>
+										<p className='visually-hidden'>
+											{t("CountryCard.NotBorderCountries")}
+										</p>
 									)}
 								</div>
 							</div>

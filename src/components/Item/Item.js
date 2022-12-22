@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const Item = ({ name, population, region, capital, img }) => {
+	const { t } = useTranslation();
+
 	return (
 		<>
 			<li className='col-xl-3 col-md-6 col-sm-12 d-flex justify-content-center mb-5 hero-section-item'>
@@ -17,7 +20,7 @@ export const Item = ({ name, population, region, capital, img }) => {
 						<h3 className='hero-section-item-wrapper-title mb-3'>{name}</h3>
 						<span className='hero-section-item-wrapper-inner d-flex mb-2'>
 							<strong className='hero-section-item-wrapper-inner-title'>
-								Population:
+								{t("Card.Population")}:
 							</strong>
 							<p className='hero-section-item-wrapper-inner-discrip'>
 								{population}
@@ -25,7 +28,7 @@ export const Item = ({ name, population, region, capital, img }) => {
 						</span>
 						<span className='hero-section-item-wrapper-inner d-flex mb-2'>
 							<strong className='hero-section-item-wrapper-inner-title'>
-								Region:
+								{t("Card.Region")}:
 							</strong>
 							<p className='hero-section-item-wrapper-inner-discrip'>
 								{region}
@@ -33,7 +36,7 @@ export const Item = ({ name, population, region, capital, img }) => {
 						</span>
 						<span className='hero-section-item-wrapper-inner d-flex mb-2'>
 							<strong className='hero-section-item-wrapper-inner-title'>
-								Capital:
+								{t("Card.Capital")}:
 							</strong>
 							<p className='hero-section-item-wrapper-inner-discrip'>
 								{capital}

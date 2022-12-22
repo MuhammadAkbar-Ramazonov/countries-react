@@ -1,12 +1,17 @@
 import "./hero.css";
 import { Item } from "../Item/Item";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
 
 function Hero() {
 	let [country, setCountry] = useState([]);
 
 	const [loading, setLoading] = useState(true);
 	const [isEror, setisEror] = useState(false);
+
+	const { t } = useTranslation();
+
 
 	function handelInput(evt) {
 		if (evt.key === "Enter") {
@@ -55,7 +60,7 @@ function Hero() {
 							className='col-12 col-sm-12 col-md-9  col-xl-10 site-search-input form-control'
 							type='search'
 							name='user_search'
-							placeholder='Search for a country…'
+							placeholder={t("Main.SearchPlaceholder")}
 							aria-label='search'
 						/>
 
@@ -74,7 +79,7 @@ function Hero() {
 							}}
 							className='col-12 col-sm-12 col-md-3 col-xl-2 form-selects'
 						>
-							<option hidden>Filter by Region</option>
+							<option hidden>{t("Main.FilterByRegion")}</option>
 							<option defaultValue={"Africa"}>Africa</option>
 							<option defaultValue={"America"}>America</option>
 							<option defaultValue={"Asia"}>Asia</option>
@@ -89,7 +94,7 @@ function Hero() {
 					{country.length !== 0 && (
 						<ul className='hero-section-list row justify-content-center gx-5'>
 							{country.map((element) => (
-								<Item 
+								<Item
 									key={element.name.official}
 									name={element.name.common}
 									population={element.population}

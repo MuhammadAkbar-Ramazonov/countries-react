@@ -103,6 +103,7 @@ body{
     width: 200px;
     height: 56px;
     border: 0;
+    font-size: 12px;
     padding: 18px 24px;
     appearance: none;
     color: var(--main-text-color) ;
