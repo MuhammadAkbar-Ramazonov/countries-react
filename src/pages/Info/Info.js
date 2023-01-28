@@ -74,7 +74,7 @@ export const Info = () => {
 										</li>
 										<li className='about-item main-text-color'>
 											<strong className='about-item-title'>
-												{t("CountryCard.Capital")}:{" "}
+												{t("CountryCard.Capital")}:
 											</strong>
 											{element.capital}
 										</li>
